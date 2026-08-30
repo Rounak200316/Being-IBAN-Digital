@@ -233,7 +233,7 @@ const GrowthSection = () => {
               backdrop-blur-2xl
             "
           >
-            <div className="flex gap-2 lg:flex-col lg:gap-3">
+            <div className="grid grid-cols-3 gap-1.5 sm:gap-2 lg:flex lg:flex-col lg:gap-3">
               {tabs.map((tab, index) => {
                 const isActive = activeTab === tab.id;
 
