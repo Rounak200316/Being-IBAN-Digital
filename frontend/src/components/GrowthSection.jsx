@@ -1,4 +1,99 @@
-import { useState } from "react";
+import React, { useState } from "react";
+
+const growthData = {
+  build: {
+    stage: "STAGE 01",
+    title: "Build",
+    description: "Build your digital foundation.",
+    items: [
+      "Google Business Profile Setup (if needed)",
+      "Social Media Management (2 Platforms)",
+      "Monthly Performance Report",
+      "Consultations for marketing",
+      "8 Creative Posts + 2 Reels",
+      "Basic SEO Optimization",
+    ],
+  },
+
+  improve: {
+    stage: "STAGE 02",
+    title: "Improve",
+    description: "Improve your digital performance.",
+    items: [
+      "Social Media Management (2 Platforms)",
+      "Google Ads Campaign Management",
+      "Lead Generation Funnel Setup",
+      "18 Creative Posts + 8 Reels",
+      "GMB Maintain",
+      "Monthly Strategy Consultation & Report",
+      "Meta Ads Campaign Management",
+      "Consultations for marketing",
+      "Advanced SEO + Local SEO",
+    ],
+  },
+
+  dominate: {
+    stage: "STAGE 03",
+    title: "Dominate",
+    description: "Dominate your digital market.",
+    items: [
+      "Creative Designs (Reel + Post)",
+      "Social Media Management (3 Platforms + Shoot 2 Visit)",
+      "Advanced Analytics (Monthly Performance Report) & Scaling Strategy",
+      "Complete Digital Marketing Management",
+      "Performance Marketing + CRO",
+      "Influencer & YouTube Marketing",
+      "Website Maintenance & SEO",
+      "Dedicated Account Manager",
+      "Consultations for marketing",
+      "GMB Maintain",
+    ],
+  },
+};
+
+const tabs = [
+  {
+    id: "build",
+    title: "Build",
+    description: "Lay the foundation",
+  },
+  {
+    id: "improve",
+    title: "Improve",
+    description: "Optimize performance",
+  },
+  {
+    id: "dominate",
+    title: "Dominate",
+    description: "Lead the market",
+  },
+];
+
+const CheckIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    className="h-4 w-4"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <circle cx="12" cy="12" r="9" />
+    <path d="m8.5 12 2.3 2.3 4.7-5" />
+  </svg>
+);
+
+const ArrowIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    className="h-4 w-4"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <path d="M5 12h14" />
+    <path d="m13 6 6 6-6 6" />
+  </svg>
+);
 
 const GrowthSection = () => {
   const [activeTab, setActiveTab] = useState("build");
@@ -6,29 +101,28 @@ const GrowthSection = () => {
   const activeContent = growthData[activeTab];
 
   return (
-    <section className="relative overflow-hidden py-8 sm:py-12 lg:py-16">
-      {/* =====================================================
-          BACKGROUND
-      ===================================================== */}
-
+    <section className="relative overflow-hidden py-10 sm:py-12 lg:py-16">
+      {/* Very subtle transition from Our Services */}
       <div
         className="
-          pointer-events-none
-          absolute
-          left-0
-          top-0
-          z-10
-          h-16
-          w-full
-          bg-gradient-to-b
-          from-[#EFE1CF]/35
-          via-[#EFE1CF]/10
-          to-transparent
-        "
+    pointer-events-none
+    absolute
+    left-0
+    top-0
+    z-10
+    h-16
+    w-full
+    bg-gradient-to-b
+    from-[#EFE1CF]/35
+    via-[#EFE1CF]/10
+    to-transparent
+  "
       />
 
+      {/* Base Background */}
       <div className="absolute inset-0 -z-30 bg-[#1c1008]" />
 
+      {/* Main Gradient */}
       <div
         className="
           absolute
@@ -45,14 +139,11 @@ const GrowthSection = () => {
           -left-48
           -top-48
           -z-10
-          h-[400px]
-          w-[400px]
+          h-[600px]
+          w-[600px]
           rounded-full
           bg-[#a56b2c]/20
-          blur-[100px]
-          sm:h-[600px]
-          sm:w-[600px]
-          sm:blur-[130px]
+          blur-[130px]
         "
       />
 
@@ -63,14 +154,11 @@ const GrowthSection = () => {
           -bottom-48
           -right-48
           -z-10
-          h-[400px]
-          w-[400px]
+          h-[650px]
+          w-[650px]
           rounded-full
           bg-[#c28b45]/20
-          blur-[100px]
-          sm:h-[650px]
-          sm:w-[650px]
-          sm:blur-[140px]
+          blur-[140px]
         "
       />
 
@@ -81,20 +169,17 @@ const GrowthSection = () => {
           left-1/2
           top-1/2
           -z-10
-          h-[350px]
-          w-[500px]
+          h-[500px]
+          w-[700px]
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
           bg-[#f0d8ad]/[0.05]
-          blur-[100px]
-          sm:h-[500px]
-          sm:w-[700px]
-          sm:blur-[120px]
+          blur-[120px]
         "
       />
 
-      {/* Decorative dots */}
+      {/* Decorative Dots */}
       <div className="pointer-events-none absolute right-6 top-1/2 hidden -translate-y-1/2 opacity-20 lg:block">
         <div className="grid grid-cols-5 gap-3">
           {Array.from({ length: 35 }).map((_, index) => (
@@ -106,57 +191,36 @@ const GrowthSection = () => {
         </div>
       </div>
 
-      {/* =====================================================
-          MAIN CONTAINER
-      ===================================================== */}
-
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-
-        {/* =====================================================
-            HEADING
-        ===================================================== */}
-
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+        {/* Heading */}
         <div className="py-6 text-center sm:py-8">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#d5a866]">
+              OUR APPROACH
+            </p>
 
-          <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#d5a866] sm:text-xs sm:tracking-[0.3em]">
-            OUR APPROACH
-          </p>
+            <h2
+              className="
+      text-4xl
+      font-extrabold
+      tracking-[-0.04em]
+      text-[#f7f0e6]
+      sm:text-5xl
+      lg:text-6xl
+    "
+            >
+              Your Growth <span className="text-[#d5b98f]">Our Strategy</span>
+            </h2>
 
-          <h2
-            className="
-              text-3xl
-              font-extrabold
-              leading-tight
-              tracking-[-0.04em]
-              text-[#f7f0e6]
-              sm:text-5xl
-              lg:text-6xl
-            "
-          >
-            Your Growth{" "}
-            <span className="text-[#d5b98f]">
-              Our Strategy
-            </span>
-          </h2>
+            <div className="mx-auto mt-5 h-px w-20 bg-gradient-to-r from-transparent via-[#d5a866] to-transparent" />
 
-          <div className="mx-auto mt-4 h-px w-16 bg-gradient-to-r from-transparent via-[#d5a866] to-transparent sm:mt-5 sm:w-20" />
-
-          <p className="mx-auto mt-4 max-w-xl px-2 text-xs leading-5 text-[#cbbba6] sm:mt-5 sm:text-base sm:leading-6">
-            Build your presence. Improve your performance. Dominate your
-            market.
-          </p>
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-[#cbbba6] sm:text-base">
+              Build your presence. Improve your performance. Dominate your
+              market.
+            </p>
         </div>
 
-        {/* =====================================================
-            LAYOUT
-        ===================================================== */}
-
         <div className="grid w-full gap-4 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-5">
-
-          {/* =================================================
-              TABS
-          ================================================= */}
-
+          {/* Tabs */}
           <div
             className="
               min-w-0
@@ -167,29 +231,10 @@ const GrowthSection = () => {
               p-2
               shadow-[0_25px_80px_rgba(0,0,0,0.3)]
               backdrop-blur-2xl
-              sm:rounded-[24px]
-              sm:p-3
             "
           >
-
-            {/* Mobile: horizontal scroll */}
-            <div
-              className="
-                flex
-                w-full
-                gap-2
-                overflow-x-auto
-                pb-1
-                scrollbar-hide
-                lg:flex-col
-                lg:gap-3
-                lg:overflow-visible
-                lg:pb-0
-              "
-            >
-
+            <div className="flex gap-2 lg:flex-col lg:gap-3">
               {tabs.map((tab, index) => {
-
                 const isActive = activeTab === tab.id;
 
                 return (
@@ -236,9 +281,7 @@ const GrowthSection = () => {
                       }
                     `}
                   >
-
                     {/* Number */}
-
                     <span
                       className={`
                         flex
@@ -267,23 +310,16 @@ const GrowthSection = () => {
                       0{index + 1}
                     </span>
 
-                    {/* Text */}
-
-                    <span className="min-w-0 flex-1">
-
+                    {/* Tab Text */}
+                    <span className="min-w-0">
                       <span
                         className={`
                           block
                           truncate
                           text-xs
                           font-bold
+                          ${isActive ? "text-white" : "text-[#f0e4d2]"}
                           sm:text-sm
-
-                          ${
-                            isActive
-                              ? "text-white"
-                              : "text-[#f0e4d2]"
-                          }
                         `}
                       >
                         {tab.title}
@@ -295,21 +331,14 @@ const GrowthSection = () => {
                           hidden
                           text-xs
                           sm:block
-
-                          ${
-                            isActive
-                              ? "text-white/65"
-                              : "text-[#b9a58c]"
-                          }
+                          ${isActive ? "text-white/65" : "text-[#b9a58c]"}
                         `}
                       >
                         {tab.description}
                       </span>
-
                     </span>
 
-                    {/* Desktop arrow */}
-
+                    {/* Arrow */}
                     <span
                       className={`
                         ml-auto
@@ -327,18 +356,13 @@ const GrowthSection = () => {
                     >
                       <ArrowIcon />
                     </span>
-
                   </button>
                 );
               })}
-
             </div>
           </div>
 
-          {/* =================================================
-              CONTENT CARD
-          ================================================= */}
-
+          {/* Content */}
           <div
             className="
               relative
@@ -348,7 +372,7 @@ const GrowthSection = () => {
               border
               border-[#f3ddba]/15
               bg-[#fff7e8]/[0.075]
-              p-5
+              p-6
               shadow-[0_25px_80px_rgba(0,0,0,0.3)]
               backdrop-blur-2xl
               sm:min-h-[390px]
@@ -357,9 +381,7 @@ const GrowthSection = () => {
               lg:p-9
             "
           >
-
             {/* Top Line */}
-
             <div
               className="
                 pointer-events-none
@@ -375,40 +397,29 @@ const GrowthSection = () => {
             />
 
             {/* Content Glow */}
-
             <div
               className="
                 pointer-events-none
                 absolute
                 -right-32
                 -top-32
-                h-64
-                w-64
+                h-80
+                w-80
                 rounded-full
                 bg-[#d09a51]/10
-                blur-[80px]
-                sm:h-80
-                sm:w-80
-                sm:blur-[100px]
+                blur-[100px]
               "
             />
-
-            {/* =================================================
-                ACTIVE CONTENT
-            ================================================= */}
 
             <div
               key={activeTab}
               className="relative animate-[growthFade_0.35s_ease-out]"
             >
-
               {/* Stage */}
-
               <div
                 className="
-                  mb-3
+                  mb-4
                   inline-flex
-                  max-w-full
                   rounded-full
                   border
                   border-[#d1a66d]/30
@@ -419,12 +430,10 @@ const GrowthSection = () => {
               >
                 <span
                   className="
-                    text-[9px]
+                    text-xs
                     font-bold
-                    tracking-[0.18em]
+                    tracking-[0.2em]
                     text-[#d6b27b]
-                    sm:text-xs
-                    sm:tracking-[0.2em]
                   "
                 >
                   {activeContent.stage}
@@ -432,49 +441,31 @@ const GrowthSection = () => {
               </div>
 
               {/* Title */}
-
-              <h3
-                className="
-                  break-words
-                  text-2xl
-                  font-bold
-                  leading-tight
-                  text-[#f2ede9]
-                  sm:text-3xl
-                "
-              >
+              <h3 className="text-3xl font-bold text-[#f2ede9]">
                 {activeContent.title}
               </h3>
 
               {/* Description */}
-
               <p className="mt-2 text-xs font-medium text-[#d4b98f] sm:text-sm">
                 {activeContent.description}
               </p>
 
               {/* Divider */}
-
               <div
                 className="
-                  my-5
+                  my-6
                   h-px
                   w-full
                   bg-gradient-to-r
                   from-[#c79554]/40
                   via-[#c79554]/15
                   to-transparent
-                  sm:my-6
                 "
               />
 
-              {/* =================================================
-                  SERVICES
-              ================================================= */}
-
+              {/* Services */}
               <div className="grid min-w-0 gap-1.5 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-2">
-
                 {activeContent.items.map((item, index) => (
-
                   <div
                     key={`${activeTab}-${index}`}
                     className="
@@ -483,7 +474,7 @@ const GrowthSection = () => {
                       min-w-0
                       items-start
                       gap-2.5
-                      rounded-lg
+                      rounded-xl
                       border
                       border-transparent
                       p-2
@@ -491,13 +482,9 @@ const GrowthSection = () => {
                       duration-200
                       hover:border-[#d4a76a]/15
                       hover:bg-white/[0.035]
-                      sm:gap-3
-                      sm:rounded-xl
                     "
                   >
-
-                    {/* Check */}
-
+                    {/* Check Icon */}
                     <span
                       className="
                         mt-0.5
@@ -514,7 +501,6 @@ const GrowthSection = () => {
                     </span>
 
                     {/* Service */}
-
                     <span
                       className="
                         min-w-0
@@ -523,35 +509,26 @@ const GrowthSection = () => {
                         font-medium
                         leading-5
                         text-[#e4d5bf]
-                        sm:text-sm
                       "
                     >
                       {item}
                     </span>
-
                   </div>
-
                 ))}
-
               </div>
 
               {/* Bottom Accent */}
-
               <div className="mt-6 flex items-center gap-2 sm:mt-7">
                 <span className="h-1 w-8 rounded-full bg-[#b77b38] sm:w-10" />
                 <span className="h-1 w-2.5 rounded-full bg-[#d0a264] sm:w-3" />
                 <span className="h-1 w-1.5 rounded-full bg-[#ead0a4]" />
               </div>
-
             </div>
           </div>
         </div>
       </div>
 
-      {/* =====================================================
-          ANIMATION
-      ===================================================== */}
-
+      {/* Animation */}
       <style>{`
         @keyframes growthFade {
           from {
@@ -579,4 +556,3 @@ const GrowthSection = () => {
 };
 
 export default GrowthSection;
-
