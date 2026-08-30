@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ServiceContext } from "../context/ServiceContext";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Product = () => {
   const { productId } = useParams();
@@ -40,6 +42,24 @@ const Product = () => {
 
   return (
     <main className="min-h-screen px-4 pb-24 pt-28 sm:px-8 lg:px-12">
+      <ToastContainer
+        position="top-right"
+        autoClose={2500}
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="light"
+        toastStyle={{
+          background: "#f8f3ea",
+          color: "#754e17",
+          border: "1px solid rgba(117, 78, 23, 0.15)",
+          borderRadius: "12px",
+          fontWeight: 600,
+        }}
+      />
+
+      
       <div className="mx-auto max-w-7xl">
 
         {/* =====================================================
@@ -228,7 +248,18 @@ const Product = () => {
             {/* CTA */}
             <button
               type="button"
-              onClick={() => addToCart(productData._id)}
+              onClick={() => {
+                addToCart(productData._id);
+                toast.success(`${productData.name} added to cart!`, {
+                  position: "top-right",
+                  autoClose: 2500,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  theme: "light",
+                });
+              }}
               className="
                 group
                 relative
