@@ -1,4 +1,3 @@
-```jsx
 const GrowthSection = () => {
   const [activeTab, setActiveTab] = useState("build");
 
@@ -578,4 +577,4 @@ const GrowthSection = () => {
 };
 
 export default GrowthSection;
-```
+
