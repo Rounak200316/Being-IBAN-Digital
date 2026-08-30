@@ -194,12 +194,12 @@ const GrowthSection = () => {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         {/* Heading */}
         <div className="py-6 text-center sm:py-8">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#d5a866]">
-              OUR APPROACH
-            </p>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#d5a866]">
+            OUR APPROACH
+          </p>
 
-            <h2
-              className="
+          <h2
+            className="
       text-4xl
       font-extrabold
       tracking-[-0.04em]
@@ -207,16 +207,15 @@ const GrowthSection = () => {
       sm:text-5xl
       lg:text-6xl
     "
-            >
-              Your Growth <span className="text-[#d5b98f]">Our Strategy</span>
-            </h2>
+          >
+            Your Growth <span className="text-[#d5b98f]">Our Strategy</span>
+          </h2>
 
-            <div className="mx-auto mt-5 h-px w-20 bg-gradient-to-r from-transparent via-[#d5a866] to-transparent" />
+          <div className="mx-auto mt-5 h-px w-20 bg-gradient-to-r from-transparent via-[#d5a866] to-transparent" />
 
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-[#cbbba6] sm:text-base">
-              Build your presence. Improve your performance. Dominate your
-              market.
-            </p>
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-[#cbbba6] sm:text-base">
+            Build your presence. Improve your performance. Dominate your market.
+          </p>
         </div>
 
         <div className="grid w-full gap-4 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-5">
@@ -315,9 +314,11 @@ const GrowthSection = () => {
                       <span
                         className={`
                           block
-                          truncate
-                          text-xs
+                          whitespace-normal
+                          break-words
+                          text-[9px]
                           font-bold
+                          leading-tight
                           ${isActive ? "text-white" : "text-[#f0e4d2]"}
                           sm:text-sm
                         `}
