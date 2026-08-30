@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Prata&display=swap');
+
+@import "tailwindcss";
+
+/* Active navigation */
+a.active hr {
+    display: block;
+}
+
+/* Global typography */
+* {
+    font-family: "Manrope", sans-serif;
+}
+
+/* Strong headings / display text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+/* Prata for occasional premium/editorial accents */
+.prata-regular {
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Mobile active navigation */
+@media (max-width: 640px) {
+    a.active {
+        background-color: #754e17;
+        color: #e5d8c8;
+    }
+}
+
