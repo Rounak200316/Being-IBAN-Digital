@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const GrowthSection = () => {
   const [activeTab, setActiveTab] = useState("build");
 
