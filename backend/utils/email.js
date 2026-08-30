@@ -1,14 +1,10 @@
 import nodemailer from "nodemailer";
 
-
-// =====================================================
-// CREATE EMAIL TRANSPORTER
-// =====================================================
-
 const transporter = nodemailer.createTransport({
     host: process.env.BREVO_SMTP_HOST,
-    port: Number(process.env.BREVO_SMTP_PORT),
-    secure: false,
+    port: Number(process.env.BREVO_SMTP_PORT || 587),
+
+    secure: Number(process.env.BREVO_SMTP_PORT || 587) === 465,
 
     auth: {
         user: process.env.BREVO_SMTP_USER,
@@ -16,86 +12,43 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-
-// =====================================================
-// VERIFY EMAIL CONNECTION
-// =====================================================
-
-transporter.verify((error, success) => {
-
-    if (error) {
-
-        console.log(
-            "Email transporter error:",
-            error.message
-        );
-
-    } else {
-
-        console.log(
-            "Email server is ready"
-        );
-
-    }
-
-});
-
-
-// =====================================================
-// SEND EMAIL
-// =====================================================
-
 const sendEmail = async ({
     to,
     subject,
     html,
     text,
 }) => {
-
     try {
+        console.log("Preparing email...");
+        console.log("SMTP host:", process.env.BREVO_SMTP_HOST);
+        console.log("SMTP port:", process.env.BREVO_SMTP_PORT);
+        console.log("SMTP user configured:", !!process.env.BREVO_SMTP_USER);
+        console.log("SMTP password configured:", !!process.env.BREVO_SMTP_PASSWORD);
+        console.log("MAIL_FROM configured:", !!process.env.MAIL_FROM);
 
         const info = await transporter.sendMail({
-
             from: `"Being IBAN Digital" <${process.env.MAIL_FROM}>`,
-
             to,
-
             subject,
-
             text,
-
             html,
-
         });
 
-
-        console.log(
-            "Email sent:",
-            info.messageId
-        );
-
+        console.log("EMAIL SENT:", info.messageId);
 
         return {
             success: true,
             messageId: info.messageId,
         };
 
-
     } catch (error) {
-
-        console.log(
-            "Email sending error:",
-            error.message
-        );
-
+        console.error("EMAIL ERROR:", error);
 
         return {
             success: false,
             message: error.message,
         };
-
     }
 };
-
 
 export default sendEmail;
