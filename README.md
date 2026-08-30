@@ -1026,14 +1026,6 @@ All rights reserved.
 
 ---
 
-<p align="center">
-  <strong>Built with ❤️ using React, Node.js, Express & MongoDB</strong>
-</p>
-
-<p align="center">
-  ⭐ If you find this project useful, consider giving the repository a star!
-</p>
----
 
 # 🌐 Live Demo
 
